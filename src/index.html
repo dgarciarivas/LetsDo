@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" style = "background-color: white">
+<head>
+	<style>
+        :root {
+          --hour-color: orange;
+          --minute-color: orange;
+          --second-color: orange;
+         --inner-circle: black;
+          --deg-sec: 0deg;
+          --deg-min: 0deg;
+          --deg-hour: 0deg;
+
+                   }
+                   body{
+                      overflow: hidden,
+                   }
+                   body::-webkit-scrollbar {
+                display: none;
+                            }
+        .TopicBody::-webkit-scrollbar {
+                display: none;
+                            }
+        .body-of-tasktile::-webkit-scrollbar {
+                display: none;
+                            }
+        ul.LandingList::-webkit-scrollbar {
+                display: none;
+                            }
+           ol {
+               list-style: none;
+               counter-reset: item;
+               padding-inline-start: 20px;
+                 }
+             li {
+               counter-increment: item;
+               margin-bottom: 5px;
+               cursor: pointer;
+                }
+             li:before {
+               margin-right: 5px;
+               content: counter(item);
+               background: lightblue;
+               border-radius: 100%;
+               color: black;
+               width: 1.2em;
+               text-align: center;
+               display: inline-block;
+                 margin-left: -1.5em;
+               width: -2.0em;
+             }
+             .clock{
+                border-radius: 50%;
+                background: transparent;
+                border: 2px solid ;
+                margin: 0d auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+         .o180{
+            
+                     background-image: linear-gradient(-90deg,  var(--bar-color) 50%,transparent 50%), linear-gradient(var(--deg), transparent 50%, var(--bar-color) 50%);        
+               }
+
+         .u180{
+            background-image: linear-gradient( var(--deg), transparent 50%, white 50%),linear-gradient(-90deg, var(--bar-color) 50%, transparent 50%);              
+        }
+
+        .hours-indicator{   
+                --deg: var(--deg-hour);
+                --bar-color: var(--hour-color);
+            }
+
+        .min-indicator{
+                --deg: var(--deg-min);
+                --bar-color: var(--minute-color);
+
+            }
+        .sec-indicator{
+                --deg: var(--deg-sec);
+                --bar-color: var(--second-color);
+                    
+        }
+        .time-text{
+                -deg: var(--deg-sec);
+                --bar-color: var(--inner-circle);
+                color: black;
+                border-radius: 50%;
+                width: 90px;
+                height: 90px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                font-size: 14px;
+                background-color: #f9f9f9;
+                
+        }
+  
+	</style>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>LetsDo</title>
+</head>
+<body >
+    <div id="root"></div>
+    <script src="./bundle.js"></script>
+</body>
+</html>
