@@ -1,18 +1,18 @@
 # LetsDo
 
-to see if it compile successfully
+to see if it compile successfully:
   npm start 
   
-to compile to static folder (dist)
+to compile to static folder (dist):
   npm run build
   
-to add all file to git
+to add all file to git:
   git add -A
 
-then commit to git
+then commit to git:
   git commit -m "message about commit"
 
-Finally push
+Finally push:
   git push
   
 Now any updates should be live on:
