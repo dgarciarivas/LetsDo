@@ -31,6 +31,10 @@ class Landing extends React.Component{
 						maxHeight: `${window.screen.availHeight-100}px`
 					}}>
 					<h1> directory </h1>
+					<p> 1. topics should be one word (high level... school, basketball, job) </p>
+					<p> these should be things that you do or think about eveyday </p>
+					<p> 2. tasks should be actions related to the topic </p>
+					<p> 3. items should be action items which need to be completed in order to complete the task </p>
 					<p> Cannot accept duplicates... Seriously, don't try it. You'll delete the existing one</p>
 					 <p> You currently have {array.length} topics. Scroll down if you can't find one</p>
 					<LandingForm onSubmitLanding = {this.onSubmitLanding}/>
