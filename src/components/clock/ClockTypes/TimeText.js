@@ -4,19 +4,7 @@ const TimeText = (props) =>{
 
   return(
       <div className = 'time-text clock' 
-         
-            onClick={ ()=> {
-                            let del = confirm("Are you sure you want to clear all?"); 
-                            if (del == true){var twice = confirm("Are you REALLY sure you want to clear all?"); 
-                            if(del === true && twice === true){
-                                          window.localStorage.clear(); 
-                                          location.reload();
-                                          console.log('storage cleared')
-                                            }
-                                       }
-                                }}>
-
-
+            onClick = {()=>{props.changeClockView(1)}}>
                  <div className = 'clock-text' 
                     id="weekday" 
                    >

@@ -13,6 +13,7 @@ const TopicHeader = (props)=>{
 			 		backgroundColor: 'black', 
 			 		width: '98%', 
 			 		maxWidth: `${width}px`,
+			 		maxHeight: '20%',
 			 		position: 'fixed', 
 			 		borderRadius: '10px', 
 			 		}}
@@ -50,16 +51,12 @@ const TopicHeader = (props)=>{
 					 style = {{
 					 		display: 'flex', 
 					 		flexGrow: 10,
-					 		flexDirection: 'row', 
+					 		flexDirection: 'column', 
 					 		alignItems: 'center', 
 					 		justifyContent: 'space-around',  
 					 	}}
 				> 
-					<button
-					 		onClick = {()=>props.changeTopic(0)}
-					>
-					 	{'<'}
-					</button>
+					
 					<div className = "topic-and-topicForm-container" 
 						 style = {{
 						 		display: 'flex',
@@ -87,12 +84,20 @@ const TopicHeader = (props)=>{
 							changeTopic = {props.changeTopic}
 						/>	
 					</div>
+					<div>
+						<button
+					 		onClick = {()=>props.changeTopic(0)}
+					>
+					 	{'<'}
+					</button>
 					<button 
 							onClick = {()=>props.changeTopic(1)}
 					>
 							{'>'}
 					</button>
+					</div>
 				</div>
+
 				
 			</div>
 

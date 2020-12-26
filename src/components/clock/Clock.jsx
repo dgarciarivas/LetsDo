@@ -148,14 +148,11 @@ class Clock extends React.Component{
       return(
              <div className="Clock" id = "ClockComponent"
                    style = {{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-                   <button onClick = {()=>{this.changeClockView(0)}} >{'<'}</button>
               <ClockDisplay clockView = {this.state.clockView} day={this.state.currentDay} month={this.state.currentMonth} year={this.state.currentYear} 
                     hour={this.state.currentHour.hour} hourPercent={this.state.currentHour.percent} sec={this.state.currentSec.sec} 
                     secPercent={this.state.currentSec.percent} min={this.state.currentMin.min} minPercent = {this.state.currentMin.percent}
-                    weekday = {this.state.dayOfWeek} 
+                    weekday = {this.state.dayOfWeek} changeClockView = {this.changeClockView}
                 />
-                <button onClick = {()=>{this.changeClockView(1)}} >{'>'}</button>
-
                </div>       
                     );
 

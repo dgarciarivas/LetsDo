@@ -17,14 +17,15 @@ import SmallClock from './ClockTypes/SmallClock';
                                 month = {props.month}
                                 hour = {props.hour}
                                 min = {props.min}
-                                sec = {props.sec}/>
+                                sec = {props.sec}
+                                changeClockView = {props.changeClockView}/>
 
           );
         break;
 
         case 2: 
         return(
-              <SmallClock />
+              <SmallClock changeClockView = {props.changeClockView}/>
 
           );
         break;

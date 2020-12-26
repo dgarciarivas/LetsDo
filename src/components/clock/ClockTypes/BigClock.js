@@ -38,6 +38,7 @@ const BigClock = (props)=>{
                                 hour = {props.hour}
                                 min = {props.min}
                                 sec = {props.sec}
+                                changeClockView = {props.changeClockView}
                                 />
               </div>
             </div>

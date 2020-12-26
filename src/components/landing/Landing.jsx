@@ -23,8 +23,6 @@ class Landing extends React.Component{
 		if(this.state.help){
 			var landingHeader = document.getElementById("Landing-header")
 			landingHeader.style.opacity = '0';
-			var landingHeaderText = document.getElementById("Landing-header-text")	
-			landingHeaderText.style.opacity = '0';
 			var help = document.getElementById("help")	
 			help.style.opacity = '1';
 			this.setState({
@@ -34,8 +32,6 @@ class Landing extends React.Component{
 		else{
 			var landingHeader = document.getElementById("Landing-header")
 			landingHeader.style.opacity = '1';
-			var landingHeaderText = document.getElementById("Landing-header-text")	
-			landingHeaderText.style.opacity = '1';
 			var help = document.getElementById("help")	
 			help.style.opacity = '0';
 			this.setState({
@@ -56,8 +52,10 @@ class Landing extends React.Component{
 						boxShadow: '2px, 2px',
 					}}>
 					<Help />
-					<h1 id = 'Landing-header'> directory </h1>
-					<p id = 'Landing-header-text'> Cannot accept duplicates... Seriously, don't try it. You'll delete the existing one</p>
+					<div id = 'Landing-header'>
+						<h1 style = {{textAlign: 'center'}}> directory </h1>
+						<p> Cannot accept duplicates... Seriously, don't try it. You'll delete the existing one</p>
+					</div>
 					<p style = {{cursor: "help"}} onClick= {this.showHelp}> Help? </p>
 					 <p> You currently have {array.length} topics. Scroll down if you can't find one</p>
 					<LandingForm onSubmitLanding = {this.onSubmitLanding}/>
@@ -101,3 +99,17 @@ class Landing extends React.Component{
 	}
 }
 export default Landing;
+
+/* 
+clear all the entries
+onClick={ ()=> {
+                              let del = confirm("Are you sure you want to clear all?"); 
+                              if (del == true){var twice = confirm("Are you REALLY sure you want to clear all?"); 
+                              if(del === true && twice === true){
+	                            window.localStorage.clear(); 
+	                            location.reload();
+	                            console.log('storage cleared')
+	                            	}
+                          		}
+                         }}
+                         */

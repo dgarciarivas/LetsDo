@@ -22,16 +22,7 @@ const SmallClock = (props)=>{
                       backgroundColor: 'white',
                     }}>
               <div className="sec-indicator clock" id ="seconds"
-              onClick={ ()=> {
-                                          let del = confirm("Are you sure you want to clear all?"); 
-                                          if (del == true){var twice = confirm("Are you REALLY sure you want to clear all?"); 
-                                                            if(del === true && twice === true){
-                                                                                                window.localStorage.clear(); 
-                                                                                                location.reload();
-                                                                                                console.log('storage cleared')
-                                                                                                }
-                                                          }
-                                      }}
+                   onClick = {()=>{props.changeClockView(2)}}
                        style={{
                           
                           border: '1px none #333',
