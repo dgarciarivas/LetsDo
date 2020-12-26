@@ -4,7 +4,7 @@ import Clock from '../clock/Clock'
 
 
 const TopicHeader = (props)=>{
-	var width = String(window.screen.width - 4);
+	var width = String(window.screen.width);
 	return(
 		<div className = 'TopicHeader' 
 			 style = {{

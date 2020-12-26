@@ -9,9 +9,7 @@ class Landing extends React.Component{
 		this.state = {
 			topicList: array,
 			help: false  //false means the help is hidden
-		}
-
-		
+		}		
 	}
 	onSubmitLanding = () => {
 		let array = Object.keys(window.localStorage)
@@ -57,7 +55,8 @@ class Landing extends React.Component{
 						<p> Cannot accept duplicates... Seriously, don't try it. You'll delete the existing one</p>
 					</div>
 					<p style = {{cursor: "help"}} onClick= {this.showHelp}> Help? </p>
-					 <p> You currently have {array.length} topics. Scroll down if you can't find one</p>
+					<h3> Everything is saved to your browser (cookies) </h3>
+					 <p> You currently have {array.length} topic(s). Scroll down if you can't find one</p>
 					<LandingForm onSubmitLanding = {this.onSubmitLanding}/>
                     <ul className = "LandingList" 
                     	style = {{overflowY: 'scroll', width: '50%'}}>
@@ -65,30 +64,39 @@ class Landing extends React.Component{
                     							      index = {i} 
                     							 	  key  = {listName} 
                     							 	  style = {{
-                    							 	  			display: 'flex',
-                    							 	  			flexDirection: 'row',
-                    							 	  			justifyContent: 'space-between',
-                    							 	  			fontSize: '20px',
-                    							 	  }}
-                    								>
+            							 	  			display: 'flex',
+            							 	  			flexDirection: 'row',
+            							 	  			justifyContent: 'space-between',
+            							 	  			fontSize: '20px',
+                    							 	  }}>
                     										<a style = {{
                     												textDecoration: 'none',
                     											}}
                     											onClick = 
-                    												{()=>{this.props.changeAppView(2, i)}}
-                    													
+                    												{()=>{this.props.changeAppView(2, i)}} 			
                     											>
                     												{listName}
-                    											</a>
+                    										 </a>
+                    											<div id = "landing-button-container">
+                    											<button
+                    											onClick = {()=>{
+    																		var change = prompt("What would you like to change " +`${listName}` + " to?");
+    																		let stor = window.localStorage.getItem(`${listName}`)
+    																		window.localStorage.setItem(change, stor)
+    																		window.localStorage.removeItem(`${listName}`)
+    																		this.onSubmitLanding();
+                    													}}
+                    											> edit </button>
                     											<button
                     													onClick = {()=>{
-                    																		window.localStorage.removeItem(listName);
-                    																		this.onSubmitLanding();
+    																		window.localStorage.removeItem(listName);
+    																		this.onSubmitLanding();
                     													}}
                     													style = {{
                     														backgroundColor: 'transparent',
                     														borderRadius: '25%',
                     													}}> {'x'} </button>
+                    													</div>
                     								</li>
                     			)
                     	}
