@@ -34,6 +34,7 @@ class LandingForm extends React.Component{
                                              backgroundColor: 'white',
                                               border: 'double',
                                               color: 'black',
+                                              fontSize: '16px'
                                         }}     
                                         type = 'text'                          
                                     value={this.state.newItem} 
