@@ -54,14 +54,14 @@ class TaskForm extends React.Component{
 	    render(props){
 	    	
 		return(
-		 <form className = 'textinput' onSubmit={this.onSubmit} >
+		 <form className = 'textinput' style = {{display: 'flex', justifyContent: 'center'}} onSubmit={this.onSubmit} >
                                 <input    
                                   style= {{
                                             textAlign: 'center',
                                              backgroundColor: 'white',
                                               border: 'double orange',
                                               color: 'black',
-                                              width: '100%',
+                                              width: '75%',
                                               fontSize: '16px',
                                               borderRadius: '10px',
                                         }}     

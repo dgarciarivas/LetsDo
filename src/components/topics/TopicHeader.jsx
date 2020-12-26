@@ -11,7 +11,7 @@ const TopicHeader = (props)=>{
 			 		display: 'flex', 
 			 		flexDirection: 'row', 
 			 		backgroundColor: 'black', 
-			 		width: '98%', 
+			 		width: '100%', 
 			 		maxWidth: `${width}px`,
 			 		maxHeight: '20%',
 			 		position: 'fixed', 
