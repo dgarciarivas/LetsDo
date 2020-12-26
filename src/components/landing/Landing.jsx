@@ -81,9 +81,12 @@ class Landing extends React.Component{
                     											<button
                     											onClick = {()=>{
     																		var change = prompt("What would you like to change " +`${listName}` + " to?");
-    																		let stor = window.localStorage.getItem(`${listName}`)
-    																		window.localStorage.setItem(change, stor)
-    																		window.localStorage.removeItem(`${listName}`)
+    																		if (change == null || change == undefined || change ==+ "" ){}
+																			else{
+    																			let stor = window.localStorage.getItem(`${listName}`)
+    																			window.localStorage.setItem(change, stor)
+    																			window.localStorage.removeItem(`${listName}`)
+    																		}
     																		this.onSubmitLanding();
                     													}}
                     											> edit </button>

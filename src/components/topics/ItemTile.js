@@ -63,7 +63,7 @@ const ItemTile = (props)=>{
 					  onClick = {
 					  	(event)=>{
 					
-					      	if(event.shiftKey === false){
+					      	if(event.shiftKey === true){
 					  		var color = event.target.style.color; 
 					  	 	if(color === 'black'){event.target.style.color = 'orange'} 
 					  	 	else if(color === 'orange'){event.target.style.color = 'red'}
@@ -71,7 +71,10 @@ const ItemTile = (props)=>{
 					  	 	else {event.target.style.color = 'black'}
 					     	 }
 					     	else{
-					     		var change  = prompt('What did you want to put?')
+					     		var change  = prompt('What did you want to change '+`${JSON.parse(window.localStorage.getItem(`${props.topic}`))[props.taskIndex][props.task][props.index]['name']}`+' to?')
+					     		if (change == null || change == undefined || change ==+ ""){	
+									}
+									else{
 					     		let copyTopic = JSON.parse(window.localStorage.getItem(`${props.topic}`));									
 								let list2Edit = copyTopic[props.taskIndex][props.task];
 								console.log(JSON.stringify(list2Edit))
@@ -79,6 +82,7 @@ const ItemTile = (props)=>{
 								copyTopic[props.taskIndex][props.task] = list2Edit;
 								console.log(copyTopic)
 								window.localStorage.setItem(`${props.topic}`, JSON.stringify(copyTopic));
+							}
 								props.onSubmitRender(props.topic);							
 					     	}
 							}

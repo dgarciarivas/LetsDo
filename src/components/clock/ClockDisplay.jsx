@@ -3,7 +3,7 @@ import BigClock from './ClockTypes/BigClock';
 import SmallClock from './ClockTypes/SmallClock';
 
  const ClockDisplay = (props)=>{
-
+    
 
       switch(props.clockView){
 

@@ -16,7 +16,7 @@ class TaskForm extends React.Component{
 
 	    onSubmit(event){
 	        event.preventDefault(); 
-	        if(this.state.newTask === ''){
+	        if(this.state.newTask ==+ ''){
 	          alert("Please enter a value");
 					}
 	        else{

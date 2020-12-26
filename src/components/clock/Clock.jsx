@@ -127,7 +127,7 @@ class Clock extends React.Component{
      componentWillUnmount() {
     clearInterval(this.tictoc);
   }
-    changeClockView(num){ 
+    changeClockView(num, isMobile){ 
              let view = this.state.clockView;
               if (num === 1){
                 view++;
@@ -137,7 +137,7 @@ class Clock extends React.Component{
                   }
               let remainder = view%2;
               view = remainder;
-              if (remainder === 0){
+              if (remainder === 0 || isMobile == true){
                 view = 2;
               }
               this.setState({

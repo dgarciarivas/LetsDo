@@ -13,7 +13,7 @@ class LandingForm extends React.Component{
 
 	    onSubmit =(event)=>{
 	        event.preventDefault(); 
-	        if(this.state.newItem === ''){
+	        if(this.state.newItem ==+ ''){
 	          alert("Please enter a value");
 					}
 	        else{

@@ -108,7 +108,25 @@ const TaskTile = (props)=>{
 								}}>
 								<button onClick = {()=>{bumpItemIndex(true)}} style = {itemMoverStyle}>{'<'}</button>
 						<div style = {{display: 'flex'}}>
-							<div style = {{ padding: '10px', color: 'black'}}>{props.taskName}</div>
+							<div onClick = {()=>{
+									var change = prompt("What would you like to change " +`${props.taskName}` + " to?");
+									if (change == null || change == undefined || change ==+ ""){
+									}
+									else{
+									let copyTopic = JSON.parse(window.localStorage.getItem(`${props.topic}`));
+									let copiedTask = copyTopic[props.index][`${props.taskName}`]
+									let obj = {};
+	        						obj[change] = copiedTask;
+									let removedTask = copyTopic.splice(props.index, 1);  
+									copyTopic.splice(props.index, 0, obj);
+									window.localStorage.setItem(`${props.topic}`, JSON.stringify(copyTopic))
+								}
+									props.onSubmitRender(props.topic);
+
+
+								
+								}}
+                    				style = {{ padding: '10px', color: 'black'}}>{props.taskName}</div>
 							<button id = 'removeTaskButton'
 							   onMouseEnter = {(event)=>{
                                     event.target.style.backgroundColor = 'red';
