@@ -164,9 +164,9 @@ const TaskTile = (props)=>{
 							onSubmitRender = {props.onSubmitRender} 
 						/>
 						
-					<Life  Life = {`${JSON.parse(window.localStorage.getItem(props.topic))[props.index].life}`}
+					{/*<Life  Life = {`${JSON.parse(window.localStorage.getItem(props.topic))[props.index].life}`}
 							started  = {`${JSON.parse(window.localStorage.getItem(props.topic))[props.index].started}`}
-					/>
+					/>*/}
 					<div className = "body-of-tasktile" 
 						style = {{overflow: 'scroll', width: '90%'}} >
 						{props.list.map((d, i)=>  <ItemTile key = {`${d}+${i}`} 
