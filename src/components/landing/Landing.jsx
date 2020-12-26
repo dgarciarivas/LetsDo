@@ -1,12 +1,14 @@
 import React from 'react';
 import LandingForm from './LandingForm';
+import Help from "./Help";
 
 class Landing extends React.Component{
 	constructor(props){
 		super(props);
 		let array = Object.keys(window.localStorage)
 		this.state = {
-			topicList: array
+			topicList: array,
+			help: false  //false means the help is hidden
 		}
 
 		
@@ -16,6 +18,30 @@ class Landing extends React.Component{
 		this.setState({
 			topicList: array
 		});
+	}
+	showHelp = () => {
+		if(this.state.help){
+			var landingHeader = document.getElementById("Landing-header")
+			landingHeader.style.opacity = '0';
+			var landingHeaderText = document.getElementById("Landing-header-text")	
+			landingHeaderText.style.opacity = '0';
+			var help = document.getElementById("help")	
+			help.style.opacity = '1';
+			this.setState({
+				help: false
+			});
+		}
+		else{
+			var landingHeader = document.getElementById("Landing-header")
+			landingHeader.style.opacity = '1';
+			var landingHeaderText = document.getElementById("Landing-header-text")	
+			landingHeaderText.style.opacity = '1';
+			var help = document.getElementById("help")	
+			help.style.opacity = '0';
+			this.setState({
+				help: true
+			});
+		}
 	}
 		render(){
 			let array = Object.keys(window.localStorage)
@@ -28,14 +54,11 @@ class Landing extends React.Component{
 						alignItems: 'center',
 						width: '90%',
 						boxShadow: '2px, 2px',
-						maxHeight: `${window.screen.availHeight-100}px`
 					}}>
-					<h1> directory </h1>
-					<p> 1. topics should be one word (high level... school, basketball, job) </p>
-					<p> these should be things that you do or think about eveyday </p>
-					<p> 2. tasks should be actions related to the topic </p>
-					<p> 3. items should be action items which need to be completed in order to complete the task </p>
-					<p> Cannot accept duplicates... Seriously, don't try it. You'll delete the existing one</p>
+					<Help />
+					<h1 id = 'Landing-header'> directory </h1>
+					<p id = 'Landing-header-text'> Cannot accept duplicates... Seriously, don't try it. You'll delete the existing one</p>
+					<p style = {{cursor: "help"}} onClick= {this.showHelp}> Help? </p>
 					 <p> You currently have {array.length} topics. Scroll down if you can't find one</p>
 					<LandingForm onSubmitLanding = {this.onSubmitLanding}/>
                     <ul className = "LandingList" 

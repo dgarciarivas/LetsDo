@@ -26,7 +26,7 @@ const TopicHeader = (props)=>{
 					onClick  ={()=>{props.changeAppView(1, undefined)}} 
 					style = {{
 						cursor: 'pointer',
-						fontSize: '30px',
+						fontSize: 'large',
 						backgroundColor: 'transparent',
 						borderRadius: '10px',
 						marginLeft: '20px',
@@ -74,7 +74,7 @@ const TopicHeader = (props)=>{
 									}}
 						 	 style = {{
 							 	 textAlign: 'center', 
-							 	 fontSize: '45px', 
+							 	 fontSize: 'xx-large', 
 							 	 alignItems: 'center',
 							 	 color: '#f9f9f9',
 							 }}
