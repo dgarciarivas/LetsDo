@@ -62,6 +62,7 @@ class TaskForm extends React.Component{
                                               border: 'double orange',
                                               color: 'black',
                                               width: '100%',
+                                              fontSize: '16px',
                                               borderRadius: '10px',
                                         }}     
                                         type = 'text'                          

@@ -66,6 +66,7 @@ class ItemForm extends React.Component{
                                               border: 'double #FC4C02',
                                               color: 'black',
                                               width: '50%',
+                                              fontSize: '16px',
                                               marginBottom: '10px',
                                               borderRadius: '5px',
                                         }}     
